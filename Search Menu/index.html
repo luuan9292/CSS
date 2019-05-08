@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search Menu</title>
+
+	<style type="text/css">
+		#mySearch {
+			width: 60%;
+			font-size: 18px;
+			padding: 11px;
+			border: 1px solid #ddd;
+			margin-left: 20%;
+			margin-right: 20%;
+		}
+
+		#myMenu	{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			margin-left: 20%;
+			margin-right: 18.8%;
+			background-color: tomato;
+		}
+
+		#myMenu li a {
+			padding: 12px;
+			text-decoration: none;
+			color: white;
+			font-weight: 700;
+			display: block;
+		}
+
+		#myMenu li a:hover {
+			background-color: #eee;
+		}
+
+	</style>
+
+</head>
+<body>
+	<input type="text" id="mySearch" placeholder="Search..." onkeyup="myFunction()">
+
+	<ul id="myMenu">
+		<li><a href="#">HTML</a></li>
+		<li><a href="#">CSS</a></li>
+		<li><a href="#">JavaScript</a></li>
+		<li><a href="#">PHP</a></li>
+		<li><a href="#">Python</a></li>
+		<li><a href="#">Bootstrap</a></li>
+		<li><a href="#">Jquery</a></li>
+		<li><a href="#">SQL</a></li>
+		<li><a href="#">Node</a></li>
+	</ul>
+
+
+	<script type="text/javascript">
+		let myFunction = () => {
+			let input = document.getElementById('mySearch');
+			let ul = document.getElementById('myMenu');
+			let li = ul.getElementsByTagName('li');
+			let filter = input.value.toUpperCase();
+
+			for(let i = 0; i < li.length; i++) {
+				let a = li[i].getElementsByTagName('a')[0];
+				if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
+		}
+
+	</script>
+
+</body>
+</html>
