@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fake CSS Loader</title>
+
+	<style type="text/css">
+		body, html {
+		  height: 100%;
+		  position: relative;
+		  margin: 0;
+		  padding: 0;
+		}
+
+		.section {
+		  width: 100%;
+		  height: 100%; 
+		  position: relative; 
+		}
+
+		p {
+		  position: absolute;
+		  width: 100%;
+		  text-align: center;
+		  font: 40px/60px Arial;
+		  color: #fff;
+		  height: 60px;
+		  top: 50%;
+		  margin-top: -30px;
+		  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+		}
+
+		.intro   { background: #ccc }
+		.content { background: #e74c3c }
+
+		.loader {
+		  position: relative;
+		  display: block;
+		  margin: 0 auto;
+		  width: 150px;
+		  top: 65%;
+		}
+
+		.loader .bar {
+		  display: block;
+		  background: #bbb;
+		  height: 10px;
+		  border-radius: 5px;
+		  box-shadow: inset 1px 1px 0px #999, 1px 1px 0 #ddd;
+		  overflow: hidden;
+		}
+
+		.loader .bar i {
+		  display: block;
+		  background: #e74c3c;
+		  height: 10px;
+		  width: 0px;
+		  box-shadow: inset 1px 1px 0 #c0392b;
+		  border-radius: 5px;
+		  transition: width 1s linear;
+		  transition-delay: 1s;
+		}
+
+		.loader .tick {
+		  display: block;
+		  position: absolute;
+		  left: 100%;
+		  top: 15px;
+		  margin: -7px 0 0 7px;
+		  text-align: center;
+		  font-size: 20px;
+		  color: #e74c3c;
+		  opacity: 0;
+		  transition: opacity 0.25s, top 0.25s;
+		  transition-delay: 2s;
+		}
+
+		.bar i.run {
+		  width: 100%;
+		}
+		.tick.run {
+		  top: 0;
+		  opacity: 1;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="section intro">
+	  <p>Introduction</p>
+	  	<div class="loader">
+	   		<span class="bar">
+	     		<i class="animate"></i>
+	    	</span>
+	    	<span class="tick animate">&#10004;</span>
+	  	</div>
+	</div>
+	<div class="section content">
+		 <p>Content</p>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		function fakeLoad(){
+		  var animate  = $(".animate").addClass("run");
+		  var distance = $(".content").offset().top;
+		  var timer    = setTimeout(function(){
+		    $(".loader").fadeOut(250);
+		    $('html,body').animate({
+		      scrollTop: distance
+		    }, 500);
+		  }, 3000);
+		}
+
+		$(document).ready(function(){
+
+		  fakeLoad();
+
+		});
+	</script>
+</body>
+</html>
