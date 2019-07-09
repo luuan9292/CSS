@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Split Button</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<style type="text/css">
+	.button1 {
+	  z-index: 1;
+	  position: relative;
+	  font-size: inherit;
+	  font-family: inherit;
+	  color: white;
+	  padding: 0.5em 1em;
+	  outline: none;
+	  border: none;
+	  background-color: hsl(236, 32%, 26%);
+	  overflow: hidden;
+	  transition: color 0.4s ease-in-out;
+	}
+
+	.button1::before {
+	  content: '';
+	  z-index: -1;
+	  position: absolute;
+	  top: 100%;
+	  right: 100%;
+	  width: 1em;
+	  height: 1em;
+	  border-radius: 50%;
+	  background-color: #3cefff;
+	  transform-origin: center;
+	  transform: translate3d(50%, -50%, 0) scale3d(0, 0, 0);
+	  transition: transform 0.45s ease-in-out;
+	}
+
+	.button1:hover {
+	  cursor: pointer;
+	  color: #161616;
+	}
+
+	.button1:hover::before {
+	  transform: translate3d(50%, -50%, 0) scale3d(15, 15, 15);
+	}
+
+
+
+
+	.button2 {
+	  z-index: 1;
+	  position: relative;
+	  font-size: inherit;
+	  font-family: inherit;
+	  color: white;
+	  padding: 0.5em 1em;
+	  outline: none;
+	  border: none;
+	  background-color: hsl(236, 32%, 26%);
+	  overflow: hidden;
+	  transition: color 0.4s ease-in-out;
+	}
+
+	.button2::before {
+	  content: '';
+	  z-index: -1;
+	  position: absolute;
+	  top: 100%;
+	  left: 100%;
+	  width: 1em;
+	  height: 1em;
+	  border-radius: 50%;
+	  background-color: #3cefff;
+	  transform-origin: center;
+	  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+	  transition: transform 0.45s ease-in-out;
+	}
+
+	.button2:hover {
+	  cursor: pointer;
+	  color: #161616;
+	}
+
+	.button2:hover::before {
+	  transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+	}
+
+
+
+
+	.button3 {
+	  z-index: 1;
+	  position: relative;
+	  font-size: inherit;
+	  font-family: inherit;
+	  color: white;
+	  padding: 0.5em 1em;
+	  outline: none;
+	  border: none;
+	  background-color: hsl(236, 32%, 26%);
+	  overflow: hidden;
+	  transition: color 0.4s ease-in-out;
+	}
+
+	.button3::before {
+	  content: '';
+	  z-index: -1;
+	  position: absolute;
+	  bottom: 100%;
+	  right: 100%;
+	  width: 1em;
+	  height: 1em;
+	  border-radius: 50%;
+	  background-color: #3cefff;
+	  transform-origin: center;
+	  transform: translate3d(50%, 50%, 0) scale3d(0, 0, 0);
+	  transition: transform 0.45s ease-in-out;
+	}
+
+	.button3:hover {
+	  cursor: pointer;
+	  color: #161616;
+	}
+
+	.button3:hover::before {
+	  transform: translate3d(50%, 50%, 0) scale3d(15, 15, 15);
+	}
+
+
+
+
+	.button4 {
+	  z-index: 1;
+	  position: relative;
+	  font-size: inherit;
+	  font-family: inherit;
+	  color: white;
+	  padding: 0.5em 1em;
+	  outline: none;
+	  border: none;
+	  background-color: hsl(236, 32%, 26%);
+	  overflow: hidden;
+	  transition: color 0.4s ease-in-out;
+	}
+
+	.button4::before {
+	  content: '';
+	  z-index: -1;
+	  position: absolute;
+	  bottom: 100%;
+	  left: 100%;
+	  width: 1em;
+	  height: 1em;
+	  border-radius: 50%;
+	  background-color: #3cefff;
+	  transform-origin: center;
+	  transform: translate3d(-50%, 50%, 0) scale3d(0, 0, 0);
+	  transition: transform 0.45s ease-in-out;
+	}
+
+	.button4:hover {
+	  cursor: pointer;
+	  color: #161616;
+	}
+
+	.button4:hover::before {
+	  transform: translate3d(-50%, 50%, 0) scale3d(15, 15, 15);
+	}
+
+
+
+	.button5 {
+	  z-index: 1;
+	  position: relative;
+	  font-size: inherit;
+	  font-family: inherit;
+	  color: white;
+	  padding: 0.5em 1em;
+	  outline: none;
+	  border: none;
+	  background-color: hsl(236, 32%, 26%);
+	  overflow: hidden;
+	  transition: color 0.4s ease-in-out;
+	}
+
+	.button5::before {
+	  content: '';
+	  z-index: -1;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  width: 1em;
+	  height: 1em;
+	  border-radius: 50%;
+	  background-color: #3cefff;
+	  transform-origin: center;
+	  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+	  transition: transform 0.45s ease-in-out;
+	}
+
+	.button5:hover {
+	  cursor: pointer;
+	  color: #161616;
+	}
+
+	.button5:hover::before {
+	  transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+	}
+
+	</style>
+</head>
+<body>
+	<button class='button1'>Bubble</button>
+	<button class='button2'>Bubble</button>
+	<button class='button3'>Bubble</button>
+	<button class='button4'>Bubble</button>
+	<button class='button5'>Bubble</button>
+
+</body>
+</html>
