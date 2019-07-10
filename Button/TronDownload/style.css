@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #333;
+}
+
+@font-face {
+	font-family: tron;
+	src: url(font/TRON.TTF);
+}
+
+/*chinh sua nut button*/
+button {
+	font-family: tron;
+	font-size: 15px;
+	width: 250px;
+	height: 70px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: none;
+	border: 3px solid deepskyblue;
+	color: deepskyblue;
+	border-radius: 70px;
+	animation: resize 6s infinite;
+	overflow: hidden;	/*An chu download khi co hieu ung resize*/
+}
+
+/*Chen mui ten vao sau chu download*/
+button:after {
+	content: "";
+	position: absolute;
+	right: 25px;
+	top: 18px;
+	width: 15px;
+	height: 15px;
+	border-bottom: 3px solid;
+	border-right: 3px solid;
+	box-shadow: 3px 3px #333, 6px 6px deepskyblue;
+	transform: rotate(45deg);
+	animation: bounce 6s infinite;
+}
+
+/*Tao hieu ung muc nuoc dan va nut tick*/
+button:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 0;
+	background: deepskyblue;
+	animation: load 6s infinite;
+}
+
+/*Tao hieu ung thu nho button*/
+@keyframes resize{
+	0%, 20% {line-height: 64px ; width: 250px;}
+	25%, 100% {line-height: 150px; border-color: deepskyblue;} /*Day chu download xuong duoi*/
+	30%, 100% {width: 70px; border-color: #444;} /*bang ban kinh goc bo border-radius*/
+}
+
+/*Tao hieu ung muc nuoc dang cho button*/
+@keyframes load {
+	0%, 40% {height: 0;}
+	90%, 100% {height: 100%;}
+}
+
+/*Tao hieu ung bouce cho mui ten*/
+
+@keyframes bounce {
+	0%, 20% {right: 25px; top: 18px;}
+	30%, 40%, 50%, 60%, 70%, 80% {top: 14px;}
+	35%, 45%, 55%, 65%, 75%, 85% {top: 22px;}
+	54% {color: deepskyblue; box-shadow: 3px 3px #333, 6px 6px deepskyblue}
+	55%, 85% {color: #333; box-shadow: 3px 3px deepskyblue, 6px 6px #333; border-width: 3px; height: 15px}
+	90%, 100% {box-shadow: 1px 1px #333; border-width: 5px; height: 25px; color: white;}
+}
